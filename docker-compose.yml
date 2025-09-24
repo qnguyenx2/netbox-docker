@@ -13,7 +13,9 @@ services:
       timeout: 3s
       interval: 15s
     volumes:
-      - ./configuration:/etc/netbox/config:z,ro
+      - ./configuration/configuration.py:/etc/netbox/config/configuration.py:ro
+      - ./configuration/plugins.py:/etc/netbox/config/plugins.py:ro
+      - ./configuration/logging.py:/etc/netbox/config/logging.py:ro
       - netbox-media-files:/opt/netbox/netbox/media:rw
       - netbox-reports-files:/opt/netbox/netbox/reports:rw
       - netbox-scripts-files:/opt/netbox/netbox/scripts:rw
